@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://donltgstconh1"]
+
+[ext_resource type="Script" uid="uid://l43pyi2fsk46" path="res://scripts/enemy.gd" id="1_a1412"]
+[ext_resource type="Texture2D" uid="uid://djda3gp8fnwjd" path="res://assets/sprites/aswang_test.png" id="1_tcmaw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a1412"]
+radius = 7.0
+height = 22.0
+
+[node name="Enemy 1" type="CharacterBody2D"]
+script = ExtResource("1_a1412")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, -13)
+shape = SubResource("CapsuleShape2D_a1412")
+
+[node name="AswangTest" type="Sprite2D" parent="."]
+position = Vector2(32, -14)
+scale = Vector2(0.03025, 0.027)
+texture = ExtResource("1_tcmaw")
