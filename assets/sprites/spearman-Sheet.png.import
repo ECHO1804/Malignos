@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daook72e8n4y3"
-path="res://.godot/imported/spear_test.png-8ea78b53b33805844eb51ca6b7afb25e.ctex"
+uid="uid://cdln6ydrggij2"
+path="res://.godot/imported/spearman-Sheet.png-dbd5f715bbc7b9f1948c98bf23551272.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spear_test.png"
-dest_files=["res://.godot/imported/spear_test.png-8ea78b53b33805844eb51ca6b7afb25e.ctex"]
+source_file="res://assets/sprites/spearman-Sheet.png"
+dest_files=["res://.godot/imported/spearman-Sheet.png-dbd5f715bbc7b9f1948c98bf23551272.ctex"]
 
 [params]
 

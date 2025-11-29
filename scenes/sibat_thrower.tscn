@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://buoasqqmgjd3d"]
+
+[ext_resource type="Texture2D" uid="uid://cdln6ydrggij2" path="res://assets/sprites/spearman-Sheet.png" id="1_7j3ho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqi3v"]
+size = Vector2(30, 35)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nxcc6"]
+radius = 69.0072
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hut5h"]
+atlas = ExtResource("1_7j3ho")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pqnd"]
+atlas = ExtResource("1_7j3ho")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkint"]
+atlas = ExtResource("1_7j3ho")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2touw"]
+atlas = ExtResource("1_7j3ho")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp5wc"]
+atlas = ExtResource("1_7j3ho")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41trl"]
+atlas = ExtResource("1_7j3ho")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfuw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hut5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pqnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkint")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2touw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp5wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41trl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="SibatThrower" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_nqi3v")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Marker2D"]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_nxcc6")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.703125, 0.703125)
+sprite_frames = SubResource("SpriteFrames_lfuw6")
+frame_progress = 0.876554

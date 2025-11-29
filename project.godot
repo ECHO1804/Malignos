@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Malignos v1.0"
+run/main_scene="uid://bu37b0d1qamqj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 textures/light_projectors/filter=0

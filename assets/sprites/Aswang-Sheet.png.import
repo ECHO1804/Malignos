@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djda3gp8fnwjd"
-path="res://.godot/imported/aswang_test.png-6bb478ec3afeaf12e1b7772ec4e43f34.ctex"
+uid="uid://d3domongjh4n4"
+path="res://.godot/imported/Aswang-Sheet.png-de9ef916098d243a8743a3113fbb2cd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/aswang_test.png"
-dest_files=["res://.godot/imported/aswang_test.png-6bb478ec3afeaf12e1b7772ec4e43f34.ctex"]
+source_file="res://assets/sprites/Aswang-Sheet.png"
+dest_files=["res://.godot/imported/Aswang-Sheet.png-de9ef916098d243a8743a3113fbb2cd1.ctex"]
 
 [params]
 
