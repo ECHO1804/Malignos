@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmj7ju1d5t8xh"]
+
+[ext_resource type="Texture2D" uid="uid://b0o5qmo2131cb" path="res://assets/sprites/spear_test.png" id="1_43rot"]
+[ext_resource type="Script" uid="uid://bagn8i3muuicj" path="res://scripts/spear.gd" id="1_uf2bl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_43rot"]
+height = 168.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uf2bl"]
+radius = 18.0
+height = 186.0
+
+[node name="spear" type="CharacterBody2D"]
+script = ExtResource("1_uf2bl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+rotation = 1.5708
+scale = Vector2(0.2325, 0.2325)
+texture = ExtResource("1_43rot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_43rot")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_uf2bl")

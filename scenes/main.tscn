@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bu37b0d1qamqj"]
+[gd_scene load_steps=6 format=4 uid="uid://bu37b0d1qamqj"]
 
 [ext_resource type="Texture2D" uid="uid://chqtvvu2hd3pp" path="res://assets/tiles/tileset_grass.png" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://byldoa23dmw68" path="res://scenes/path_spawner.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://byldoa23dmw68" path="res://scripts/path_spawner.gd" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://buoasqqmgjd3d" path="res://scenes/sibat_thrower.tscn" id="3_sugp2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_o5qli")
@@ -523,5 +524,10 @@ script = ExtResource("2_0wfyh")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
 autostart = true
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="SibatThrower" parent="Towers" instance=ExtResource("3_sugp2")]
+position = Vector2(-33, -71)
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]

@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://buoasqqmgjd3d"]
+[gd_scene load_steps=12 format=3 uid="uid://buoasqqmgjd3d"]
 
 [ext_resource type="Texture2D" uid="uid://cdln6ydrggij2" path="res://assets/sprites/spearman-Sheet.png" id="1_7j3ho"]
+[ext_resource type="Script" uid="uid://cy8skxqam42en" path="res://scripts/sibat_thrower.gd" id="1_nqi3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqi3v"]
-size = Vector2(30, 35)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nxcc6"]
-radius = 69.0072
+size = Vector2(25, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hut5h"]
 atlas = ExtResource("1_7j3ho")
@@ -58,23 +56,32 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nxcc6"]
+radius = 69.0072
+
 [node name="SibatThrower" type="StaticBody2D"]
+script = ExtResource("1_nqi3v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_nqi3v")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -7)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Marker2D"]
-position = Vector2(0, 7)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.601563, 0.601563)
+sprite_frames = SubResource("SpriteFrames_lfuw6")
+autoplay = "default"
+frame_progress = 0.284554
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Range"]
 shape = SubResource("CircleShape2D_nxcc6")
 
 [node name="Node" type="Node" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
-scale = Vector2(0.703125, 0.703125)
-sprite_frames = SubResource("SpriteFrames_lfuw6")
-frame_progress = 0.876554
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
