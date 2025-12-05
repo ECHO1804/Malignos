@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ix3lt64vojp"]
+
+[ext_resource type="PackedScene" uid="uid://donltgstconh1" path="res://scenes/aswang.tscn" id="1_014kd"]
+
+[sub_resource type="Curve2D" id="Curve2D_o5qli"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -262, -49, 0, 0, 0, 0, -167, -55, 0, 0, 0, 0, -130, -72, 0, 0, 0, 0, 86, -71, 0, 0, 0, 0, 174, -63, 0, 0, 0, 0, 192, -34, 0, 0, 0, 0, 171, 4, 0, 0, 0, 0, 103, 25, 0, 0, 0, 0, -3, 18, 0, 0, 0, 0, -122, 18, 0, 0, 0, 0, -145, 55, 0, 0, 0, 0, -139, 97, 0, 0, 0, 0, -107, 127, 0, 0, 0, 0, 105, 123, 0, 0, 0, 0, 142, 107, 0, 0, 0, 0, 196, 105, 0, 0, 0, 0, 245, 74, 0, 0, 0, 0, 309, 73)
+}
+point_count = 18
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_o5qli")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-262, -49)
+rotates = false
+loop = false
+
+[node name="Enemy 1" parent="PathFollow2D" instance=ExtResource("1_014kd")]
+position = Vector2(-10, -3)

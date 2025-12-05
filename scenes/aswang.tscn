@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://donltgstconh1"]
+
+[ext_resource type="Script" uid="uid://l43pyi2fsk46" path="res://scripts/enemy.gd" id="1_vhsid"]
+[ext_resource type="Texture2D" uid="uid://d3domongjh4n4" path="res://assets/sprites/Aswang-Sheet.png" id="2_1tr5p"]
+[ext_resource type="Script" uid="uid://bgqpfqma23fp3" path="res://scripts/enemy_health.gd" id="4_qhswh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejytf"]
+atlas = ExtResource("2_1tr5p")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq62l"]
+atlas = ExtResource("2_1tr5p")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3026"]
+atlas = ExtResource("2_1tr5p")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l21ug"]
+atlas = ExtResource("2_1tr5p")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nrqq"]
+atlas = ExtResource("2_1tr5p")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oweuj"]
+atlas = ExtResource("2_1tr5p")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcr21"]
+atlas = ExtResource("2_1tr5p")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5oq2"]
+atlas = ExtResource("2_1tr5p")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m468s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejytf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq62l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3026")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l21ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nrqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oweuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcr21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5oq2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a1412"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tr5p"]
+bg_color = Color(0.641931, 0, 0.112134, 1)
+
+[node name="aswang" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_vhsid")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.507813, 0.507813)
+sprite_frames = SubResource("SpriteFrames_m468s")
+autoplay = "default"
+frame_progress = 0.586733
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("CapsuleShape2D_a1412")
+
+[node name="enemy_health" type="ProgressBar" parent="."]
+offset_left = -7.0
+offset_top = -15.0
+offset_right = 111.0
+offset_bottom = 12.0
+scale = Vector2(0.11, 0.11)
+theme_override_styles/fill = SubResource("StyleBoxFlat_1tr5p")
+show_percentage = false
+script = ExtResource("4_qhswh")

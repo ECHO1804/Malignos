@@ -1,0 +1,236 @@
+[gd_scene load_steps=17 format=3 uid="uid://cplvwxjunjphm"]
+
+[ext_resource type="Script" uid="uid://d23p6ln77kci3" path="res://scripts/ui.gd" id="1_gdt2y"]
+[ext_resource type="PackedScene" uid="uid://dqwsnr5nhmkcv" path="res://scenes/sibat_thrower_panel.tscn" id="1_nt7q6"]
+[ext_resource type="Texture2D" uid="uid://ln54dynavpfq" path="res://assets/sprites/Panel.png" id="2_p7vwb"]
+[ext_resource type="FontFile" uid="uid://cf2hflfapyph7" path="res://assets/BoldPixels/BoldPixels.ttf" id="2_x4jx1"]
+[ext_resource type="FontFile" uid="uid://yjym56vmv8hk" path="res://assets/BoldPixels/BoldPixels.woff" id="3_yev5y"]
+[ext_resource type="Texture2D" uid="uid://vrtea0aeg6uo" path="res://assets/sprites/GOLD.png" id="5_7dvkv"]
+[ext_resource type="Texture2D" uid="uid://db4tw87klprgo" path="res://assets/sprites/Lives.png" id="5_cgfq5"]
+[ext_resource type="FontFile" uid="uid://c2gfyglfqkumq" path="res://assets/BoldPixels/BoldPixels.otf" id="5_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://cqxlyg5oiw8cr" path="res://assets/TITLE SCREEN.png" id="6_8dubc"]
+[ext_resource type="Texture2D" uid="uid://dvh2js83nj1yx" path="res://assets/sprites/Main Panel.png" id="7_ktti3"]
+[ext_resource type="Texture2D" uid="uid://bdgbi3t24fdcs" path="res://assets/Border.png" id="11_vdcm2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktti3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dvkv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rmj2"]
+bg_color = Color(0.994023, 0.782044, 0.461924, 0.807843)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdcm2"]
+bg_color = Color(0.951314, 0.675842, 0.166711, 0.807843)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0.984067, 0.648257, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dvkv"]
+bg_color = Color(0.945098, 0.584314, 0, 0.772549)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0.831627, 0.136081, 9.71279e-05, 1)
+shadow_offset = Vector2(1.65, 0)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_gdt2y")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1052.0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 111.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ktti3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(51, 54)
+scale = Vector2(0.102315, 0.102315)
+texture = ExtResource("2_p7vwb")
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 91.0
+offset_bottom = 97.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="Sibat_thrower_panel" parent="Panel/FlowContainer" instance=ExtResource("1_nt7q6")]
+layout_mode = 2
+
+[node name="Gold" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 11.0
+offset_right = 1044.0
+offset_bottom = 43.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_x4jx1")
+theme_override_font_sizes/font_size = 32
+text = "300"
+
+[node name="Sprite2D" type="Sprite2D" parent="Gold"]
+position = Vector2(-26, 16)
+scale = Vector2(0.0592448, 0.0592448)
+texture = ExtResource("5_7dvkv")
+
+[node name="Lives" type="Label" parent="."]
+offset_left = 1095.0
+offset_top = 125.0
+offset_right = 1143.0
+offset_bottom = 157.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_x4jx1")
+theme_override_font_sizes/font_size = 32
+text = "10"
+horizontal_alignment = 1
+justification_flags = 131
+
+[node name="Sprite2D" type="Sprite2D" parent="Lives"]
+position = Vector2(-19, 17)
+scale = Vector2(0.0746239, 0.0746239)
+texture = ExtResource("5_cgfq5")
+
+[node name="Waves" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 2.0
+offset_right = 98.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yev5y")
+theme_override_font_sizes/font_size = 32
+text = "Waves"
+
+[node name="Menu" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7dvkv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Menu"]
+position = Vector2(581, 226)
+scale = Vector2(0.359766, 0.359766)
+texture = ExtResource("7_ktti3")
+
+[node name="Message" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 474.0
+offset_top = 69.0
+offset_right = 642.0
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.881435, 0.856448, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("5_wm3ai")
+theme_override_font_sizes/font_size = 16
+text = "You socres"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TITLE" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -64.0
+offset_right = 288.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_wm3ai")
+theme_override_font_sizes/font_size = 128
+
+[node name="Sprite2D" type="Sprite2D" parent="TITLE"]
+position = Vector2(288, 28)
+scale = Vector2(0.494141, 0.494141)
+texture = ExtResource("6_8dubc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="TITLE"]
+position = Vector2(284, 62)
+scale = Vector2(0.625814, 0.625814)
+texture = ExtResource("11_vdcm2")
+
+[node name="WaveMessage" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 590.0
+offset_right = 314.0
+offset_bottom = 624.0
+theme_override_fonts/font = ExtResource("5_wm3ai")
+text = "Wave Messages"
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -272.0
+offset_right = 47.0
+offset_bottom = -233.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("5_wm3ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6rmj2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdcm2")
+text = "START"
+
+[node name="ExitButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -227.0
+offset_right = 47.0
+offset_bottom = -188.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_wm3ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6rmj2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdcm2")
+text = "EXIT"
+
+[node name="PauseButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -637.0
+offset_right = 47.0
+offset_bottom = -598.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_wm3ai")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7dvkv")
+text = "PAUSE"
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

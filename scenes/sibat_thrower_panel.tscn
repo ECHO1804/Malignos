@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://dqwsnr5nhmkcv"]
+
+[ext_resource type="Script" uid="uid://y5xss4macte6" path="res://scripts/sibat_thrower_panel.gd" id="1_ngq3v"]
+[ext_resource type="Texture2D" uid="uid://cdln6ydrggij2" path="res://assets/sprites/spearman-Sheet.png" id="2_7q0c4"]
+[ext_resource type="FontFile" uid="uid://c2gfyglfqkumq" path="res://assets/BoldPixels/BoldPixels.otf" id="3_7q0c4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngq3v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2461g"]
+atlas = ExtResource("2_7q0c4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhtff"]
+atlas = ExtResource("2_7q0c4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sevac"]
+atlas = ExtResource("2_7q0c4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiyld"]
+atlas = ExtResource("2_7q0c4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qgtq"]
+atlas = ExtResource("2_7q0c4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1mop"]
+atlas = ExtResource("2_7q0c4")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ajwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2461g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhtff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sevac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiyld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qgtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1mop")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Sibat_thrower_panel" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ngq3v")
+script = ExtResource("1_ngq3v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 40)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_6ajwr")
+autoplay = "default"
+frame_progress = 0.689185
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 76.0
+offset_right = 63.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("3_7q0c4")
+text = "P100"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bq2n3g1rca7lm"
+path="res://.godot/imported/Airline - Geographer.mp3-10f800d9fdfd3b3ba20a47095ccdfa16.mp3str"
+
+[deps]
+
+source_file="res://assets/musics/Airline - Geographer.mp3"
+dest_files=["res://.godot/imported/Airline - Geographer.mp3-10f800d9fdfd3b3ba20a47095ccdfa16.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
